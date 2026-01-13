@@ -28,3 +28,8 @@
 /processor:FontDescriptionProcessor
 /build:DefaultFont.spritefont
 
+#begin DebugFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:DebugFont.spritefont
+

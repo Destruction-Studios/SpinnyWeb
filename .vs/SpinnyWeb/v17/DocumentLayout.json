@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\content\\defaultfont.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\content\\defaultfont.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\content\\debugfont.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\content\\debugfont.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\managers\\visualdebuggingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\managers\\visualdebuggingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\spinnywebgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\spinnywebgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +43,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "SpinnyWeb\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Pages\\Index.razor",
+              "RelativeToolTip": "SpinnyWeb\\Pages\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-13T21:46:54.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "SpinnyWeb\\wwwroot\\index.html",
               "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\wwwroot\\index.html",
               "RelativeToolTip": "SpinnyWeb\\wwwroot\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-01-13T02:45:35.159Z",
+              "WhenOpened": "2026-01-13T21:46:44.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DefaultFont.spritefont",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Content\\DefaultFont.spritefont",
+              "RelativeDocumentMoniker": "SpinnyWeb\\Content\\DefaultFont.spritefont",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Content\\DefaultFont.spritefont",
+              "RelativeToolTip": "SpinnyWeb\\Content\\DefaultFont.spritefont",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-13T21:46:13.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VisualDebuggingManager.cs",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\VisualDebuggingManager.cs",
+              "RelativeDocumentMoniker": "SpinnyWeb\\Managers\\VisualDebuggingManager.cs",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\VisualDebuggingManager.cs",
+              "RelativeToolTip": "SpinnyWeb\\Managers\\VisualDebuggingManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T21:44:59.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpinnyWebGame.cs",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\SpinnyWebGame.cs",
+              "RelativeDocumentMoniker": "SpinnyWeb\\SpinnyWebGame.cs",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\SpinnyWebGame.cs",
+              "RelativeToolTip": "SpinnyWeb\\SpinnyWebGame.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T21:44:56.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DebugFont.spritefont",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Content\\DebugFont.spritefont",
+              "RelativeDocumentMoniker": "SpinnyWeb\\Content\\DebugFont.spritefont",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Content\\DebugFont.spritefont",
+              "RelativeToolTip": "SpinnyWeb\\Content\\DebugFont.spritefont",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-13T21:44:34.062Z",
               "EditorCaption": ""
             }
           ]
