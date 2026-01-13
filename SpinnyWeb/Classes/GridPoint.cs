@@ -1,0 +1,61 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace SpinnyWeb
+{
+    public class GridPoint
+    {
+        private Vector2 TEXT_OFFSET = new Vector2(19, 25);
+
+        public Vector2 position { get; private set; }
+        public bool hovering = false;
+        protected float scale = .05f;
+        protected Color color = Color.Red;
+
+        public GridPoint(Vector2 startPosition)
+        {
+            position = startPosition;
+        }
+
+        public void SetPosition(Vector2 position)
+        {
+            this.position = position;
+        }
+
+        public float GetScale()
+        {
+            return scale;
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, Texture2D circle, SpriteFont font, GridPointDrawOptions options)
+        {
+            spriteBatch.Draw(
+                circle,
+                position,
+                null,
+                color,
+                0.0f,
+                new Vector2(circle.Width, circle.Height) * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
+
+            if (hovering && options.DrawText)
+            {
+                spriteBatch.DrawString(
+                    font,
+                    string.Format("Degrees: {0:F2}", options.Degrees),
+                    options.RenderPos + TEXT_OFFSET,
+                    Color.Teal
+                    );
+                spriteBatch.DrawString(
+                    font,
+                    string.Format("Transform <{0:F0}, {1:F0}>", options.Transform.X, options.Transform.Y),
+                    options.RenderPos + TEXT_OFFSET + new Vector2(0, 20),
+                    Color.Teal
+                    );
+            }
+        }
+    }
+}

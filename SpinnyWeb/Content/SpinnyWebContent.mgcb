@@ -1,0 +1,30 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:BlazorGL
+/config:
+/profile:Reach
+/compress:True
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin images/circle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:images/circle.png
+
+#begin images/line_new.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:images/line_new.png
+
+#begin DefaultFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:DefaultFont.spritefont
+
