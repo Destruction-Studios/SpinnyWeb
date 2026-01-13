@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>SpinnyWeb</title>
+    <title>Spinny</title>
     <base href="./" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
     <div id="app">
         <div id="loading" style="display: table-cell; margin: auto; width: 100vw; height: 100vh; vertical-align: middle; background: #5d7294;">
             <div style="display: block; margin: auto; width: 9em; color: white;font-family: 'Segoe UI', sans-serif;">
-                <div style="text-align: center; font-size: 1.8em;">loading&nbsp;<marquee style="width:0.9em; vertical-align: bottom;">.&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;</marquee></div>
+                <div style="text-align: center; font-size: 1.8em;">Loading&nbsp;<marquee style="width:0.9em; vertical-align: bottom;">.&nbsp;.&nbsp;.&nbsp;&nbsp;&nbsp;</marquee></div>
             </div>
         </div>
         <
@@ -102,6 +102,9 @@
             // when running inside an iframe. e.g: itch.io embedding.
             if ([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1)
                 event.preventDefault();
+            else if (event.key == "s" || event.key == "S") {
+                window.open("https://spin.mrussell.net/source", "_blank");
+            } 
         });
         window.addEventListener("wheel", function(event)
         {

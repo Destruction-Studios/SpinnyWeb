@@ -11,6 +11,7 @@ namespace SpinnyWeb
         private static Random rng = new Random();
 
         const float TICK_SPACING = 25;
+        public bool snapping = true;
         float tickScale;
         Texture2D line;
         Texture2D circle;
@@ -53,6 +54,9 @@ namespace SpinnyWeb
 
         public Vector2 SnapToGrid(Vector2 position, Vector2 screenCenter)
         {
+            if (!snapping)
+                return position;
+
             return screenCenter + new Vector2(
                 MathF.Round((position.X - screenCenter.X) / TICK_SPACING) * TICK_SPACING,
                 MathF.Round((position.Y - screenCenter.Y) / TICK_SPACING) * TICK_SPACING

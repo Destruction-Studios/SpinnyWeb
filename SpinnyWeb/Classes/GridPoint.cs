@@ -27,11 +27,14 @@ namespace SpinnyWeb
             return scale;
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch, Texture2D circle, SpriteFont font, GridPointDrawOptions options)
+        public virtual void Draw(SpriteBatch spriteBatch, GridManager grid, Vector2 screenSize, Texture2D circle, SpriteFont font, GridPointDrawOptions options)
         {
+            Vector2 circleRenderPos = grid.SnapToGrid(position, screenSize * 0.5f);
+
+
             spriteBatch.Draw(
                 circle,
-                position,
+                circleRenderPos,
                 null,
                 color,
                 0.0f,
@@ -45,16 +48,25 @@ namespace SpinnyWeb
             {
                 spriteBatch.DrawString(
                     font,
-                    string.Format("Degrees: {0:F2}", options.Degrees),
+                    string.Format("(x: {0:F2}, y: {1:F2})", circleRenderPos.X / 25, circleRenderPos.Y / -25),
                     options.RenderPos + TEXT_OFFSET,
                     Color.Teal
                     );
-                spriteBatch.DrawString(
+                if (options.RenderExtra)
+                {
+                    spriteBatch.DrawString(
                     font,
-                    string.Format("Transform <{0:F0}, {1:F0}>", options.Transform.X, options.Transform.Y),
+                    string.Format("degrees: {0:F2}", options.Degrees),
                     options.RenderPos + TEXT_OFFSET + new Vector2(0, 20),
                     Color.Teal
                     );
+                    spriteBatch.DrawString(
+                        font,
+                        string.Format("transform <{0:F1}, {1:F1}>", options.Transform.X, options.Transform.Y),
+                        options.RenderPos + TEXT_OFFSET + new Vector2(0, 40),
+                        Color.Teal
+                        );
+                }
             }
         }
     }

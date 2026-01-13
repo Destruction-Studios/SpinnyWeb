@@ -15,7 +15,7 @@ namespace SpinnyWeb
         public float rotAdd;
 
 
-        private Dictionary<int, GridPoint> points = new Dictionary<int, GridPoint>();
+        public Dictionary<int, GridPoint> points = new Dictionary<int, GridPoint>();
         private int currentId = 0;
         private Texture2D circle;
         private Texture2D line;
@@ -125,7 +125,7 @@ namespace SpinnyWeb
             {
                 if (points.TryGetValue(draggingId, out GridPoint grabbed))
                 {
-                    grabbed.SetPosition(grid.SnapToGrid(mousePos, screenCenter));
+                    grabbed.SetPosition(mousePos);
                 } else
                 {
                     draggingId = -1;
@@ -155,7 +155,7 @@ namespace SpinnyWeb
             );
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 screenSize)
+        public void Draw(SpriteBatch spriteBatch, GridManager grid, Vector2 screenSize)
         {
             Vector2 screenCenter = screenSize * 0.5f;
             GridPivot pivot = (GridPivot) points[0];
@@ -164,31 +164,33 @@ namespace SpinnyWeb
             {
                 GridPoint p = v.Value;
                 bool isPivot = v.Key == 0;
+                Vector2 pointPos = grid.SnapToGrid(p.position, screenSize * 0.5f);
+                Vector2 pivotPos = grid.SnapToGrid(pivot.position, screenSize * 0.5f);
 
-                Vector2 relativePivot = new Vector2(p.position.X - pivot.position.X, p.position.Y - pivot.position.Y);
-                Vector2 dir = p.position - pivot.position;
+                Vector2 relativePivot = new Vector2(pointPos.X - pivotPos.X, pointPos.Y - pivotPos.Y);
+                Vector2 dir = pointPos - pivotPos;
 
                 float dist = dir.Length();
                 float atan = MathF.Atan2(dir.Y, dir.X);
 
-                bool drawText = !isPivot && (p.hovering || draggingId == v.Key);
+                bool drawText = (p.hovering || draggingId == v.Key);
 
-                if (drawText)
+                if (drawText && !isPivot)
                 {
-                    DrawDirLine(spriteBatch, pivot.position, atan, dist, 5, Color.Teal * .65f);
+                    DrawDirLine(spriteBatch, pivotPos, atan, dist, 5, Color.Teal * .65f);
 
-                    float dx = p.position.X - pivot.position.X;
-                    float dy = p.position.Y - pivot.position.Y;
-                    Vector2 vertStart = pivot.position + new Vector2(dx, 0);
+                    float dx = pointPos.X - pivotPos.X;
+                    float dy = pointPos.Y - pivotPos.Y;
+                    Vector2 vertStart = pivotPos + new Vector2(dx, 0);
 
-                    DrawDirLine(spriteBatch, pivot.position, dx >= 0 ? 0 : MathF.PI, MathF.Abs(dx), 3, Color.Red * .4f);
+                    DrawDirLine(spriteBatch, pivotPos, dx >= 0 ? 0 : MathF.PI, MathF.Abs(dx), 3, Color.Red * .4f);
                     
                     DrawDirLine(spriteBatch, vertStart, dy >= 0 ? MathF.PI * 0.5f : -MathF.PI * 0.5f, MathF.Abs(dy), 3, Color.Red * .4f);
 
                     // little right-angle L inside the corner
                     Vector2 relativeCenter = new Vector2(
-                        p.position.X - screenCenter.X,
-                        p.position.Y - screenCenter.Y
+                        pointPos.X - screenCenter.X,
+                        pointPos.Y - screenCenter.Y
                         );
 
                     DrawDirLine(spriteBatch, vertStart + new Vector2(CORNER_SIZE * -MathF.Sign(relativePivot.X), relativePivot.Y < 0 ? -CORNER_SIZE : 0), MathF.PI * 0.5f, CORNER_SIZE, 2, Color.Blue * .4f);
@@ -197,12 +199,13 @@ namespace SpinnyWeb
 
                 GridPointDrawOptions options = new GridPointDrawOptions(
                     drawText,
-                    pivot.position,
+                    !isPivot,
+                    pivotPos,
                     MathHelper.ToDegrees(atan + (MathHelper.Pi * .5f)),
                     relativePivot / new Vector2(25, -25)
                     );
 
-                v.Value.Draw(spriteBatch, circle, font, options);
+                v.Value.Draw(spriteBatch, grid, screenSize, circle, font, options);
             }
         }
     }

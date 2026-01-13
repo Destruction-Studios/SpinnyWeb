@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Input.Touch;
-using Microsoft.Xna.Framework.Media;
+using System.Diagnostics;
 
 namespace SpinnyWeb
 {
@@ -17,9 +13,11 @@ namespace SpinnyWeb
         Texture2D _line;
         Texture2D _circle;
         SpriteFont _font;
+        SpriteFont _debugFont;
 
         GridManager gridManager;
         PointManager pointManager;
+        VisualDebuggingManager visualDebuggingManager;
 
         KeyboardState lastKeyboardState;
 
@@ -32,32 +30,29 @@ namespace SpinnyWeb
 
         }
 
-
-        protected override void Initialize()
-        {
-            
-
-            base.Initialize();
-
-        }
-
         protected override void LoadContent()
         {
+            _debugFont = Content.Load<SpriteFont>("DebugFont");
             _font = Content.Load<SpriteFont>("DefaultFont");
             _line = Content.Load<Texture2D>("images/line_new");
             _circle = Content.Load<Texture2D>("images/circle");
 
             gridManager = new GridManager(2, _line, _circle);
             pointManager = new PointManager(_circle, _line, _font, ScreenSize() * 0.5f);
+            visualDebuggingManager = new VisualDebuggingManager(_debugFont);
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
         {
+            MouseState mouseState = Mouse.GetState();
             KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.OemPlus) && lastKeyboardState.IsKeyUp(Keys.OemPlus))
-                pointManager.AddPoint(gridManager.RandomPos(ScreenSize()));
+            if (WasKeyJustPressed(Keys.OemPlus, keyboardState))
+                pointManager.AddPoint(new Vector2(mouseState.X, mouseState.Y));//gridManager.RandomPos(ScreenSize()));
+
+            if (WasKeyJustPressed(Keys.G, keyboardState))
+                gridManager.snapping = !gridManager.snapping;
 
             float mouseScroll = Mouse.GetState().ScrollWheelValue;
             pointManager.rotAdd = ((mouseScroll - lastMouseScroll) / 10) % 360;
@@ -74,28 +69,28 @@ namespace SpinnyWeb
 
             spriteBatch.Begin(sortMode: SpriteSortMode.BackToFront);
 
-            gridManager.Draw(spriteBatch, ScreenSize());
-            pointManager.Draw(spriteBatch, ScreenSize());
+            string gridText = string.Format("[G] Grid: {0}", gridManager.snapping ? "Enabled" : "Disabled");
+            string pointText = string.Format("[+] Points: {0}", pointManager.points.Count - 1);
 
-            spriteBatch.DrawString(
-                _font,
-                "+ to add point",
-                new Vector2(15, 15),
-                Color.Brown);
-            spriteBatch.DrawString(
-                _font,
-                "drag points to move them",
-                new Vector2(15, 40),
-                Color.Brown);
-            spriteBatch.DrawString(
-                _font,
-                "scroll to rotate around pivot",
-                new Vector2(15, 65),
-                Color.Brown);
+            visualDebuggingManager.AddText("[S] to open source page (spin.mrussell.net/source)");
+            visualDebuggingManager.AddText(gridText);
+            visualDebuggingManager.AddText(pointText);
+            visualDebuggingManager.AddText("");
+            visualDebuggingManager.AddText("Drag points to move them");
+            visualDebuggingManager.AddText("Scroll to rotate around pivot");
+
+            gridManager.Draw(spriteBatch, ScreenSize());
+            pointManager.Draw(spriteBatch, gridManager, ScreenSize());
+            visualDebuggingManager.Draw(spriteBatch);
 
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private bool WasKeyJustPressed(Keys key, KeyboardState keyboardState)
+        {
+            return keyboardState.IsKeyDown(key) && lastKeyboardState.IsKeyUp(key);
         }
 
         private Vector2 ScreenSize()
