@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "SpinnyWeb\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\wwwroot\\index.html",
+              "RelativeToolTip": "SpinnyWeb\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-01-13T02:45:35.159Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
