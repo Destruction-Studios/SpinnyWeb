@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SpinnyWeb.Objects;
 using System;
 using System.Collections.Generic;
 
@@ -22,6 +23,7 @@ namespace SpinnyWeb
         private SpriteFont font;
 
         private int draggingId = -1;
+        private int hovering = -1;
         private MouseState lastMouseState;
 
         public PointManager(Texture2D circle, Texture2D line, SpriteFont font, Vector2 screenCenter) 
@@ -64,6 +66,37 @@ namespace SpinnyWeb
                 mousePos.Y >= top && mousePos.Y <= bottom);
         }
 
+        public void FlipCurrentPoint(ReflectModes mode)
+        {
+            if (hovering == -1)
+            {
+                return;
+            }
+            GridPoint point = points[hovering];
+            Vector2 p = point.position;
+            Vector2 newPosition;
+
+            if (mode == ReflectModes.XAxis)
+            {
+                newPosition = new Vector2(p.X, -p.Y);
+            }
+            else if (mode == ReflectModes.YAxis)
+            {
+                newPosition = new Vector2(-p.X, p.Y);
+            } else if (mode == ReflectModes.YeX)
+            {
+                newPosition = new Vector2(p.Y, p.X);
+            } else if (mode == ReflectModes.YeNX)
+            {
+                newPosition = new Vector2(-p.Y, -p.X);
+            } else
+            {
+                newPosition = p;
+            }
+
+                point.SetPosition(newPosition);
+        }
+
         public void Update(GridManager grid, Vector2 screenSize)
         {
             Vector2 screenCenter = screenSize * 0.5f;
@@ -104,10 +137,13 @@ namespace SpinnyWeb
                 }
             }
 
+            hovering = -1;
+
             foreach (KeyValuePair<int, GridPoint> v in points)
             {
                 if (IsMouseInsidePoint(v.Key, mousePos))
                 {
+                    hovering = v.Key;
                     v.Value.hovering = true;
                     if (justPressed)
                     {

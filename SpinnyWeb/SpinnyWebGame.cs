@@ -23,6 +23,8 @@ namespace SpinnyWeb
 
         private float lastMouseScroll;
 
+        private int reflectMode = 0;
+
         public SpinnyWebGame()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -53,6 +55,10 @@ namespace SpinnyWeb
 
             if (WasKeyJustPressed(Keys.G, keyboardState))
                 gridManager.snapping = !gridManager.snapping;
+
+            if (WasKeyJustPressed(Keys.R, keboardState)) {
+                pointManager.FlipCurrentPoint(reflectMode);
+            }
 
             float mouseScroll = Mouse.GetState().ScrollWheelValue;
             pointManager.rotAdd = ((mouseScroll - lastMouseScroll) / 10) % 360;

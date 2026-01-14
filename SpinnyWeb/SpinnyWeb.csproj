@@ -29,6 +29,7 @@
     <Compile Include="Managers\PointManager.cs" />
     <Compile Include="Managers\VisualDebuggingManager.cs" />
     <Compile Include="Objects\GridPointDrawOptions.cs" />
+    <Compile Include="Objects\ReflectModes.cs" />
     <Compile Include="Pages\Index.razor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SpinnyWebGame.cs" />
