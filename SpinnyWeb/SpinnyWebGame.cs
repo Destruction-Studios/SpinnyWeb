@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SpinnyWeb.Objects;
 using System.Diagnostics;
 
 namespace SpinnyWeb
@@ -23,7 +24,7 @@ namespace SpinnyWeb
 
         private float lastMouseScroll;
 
-        private int reflectMode = 0;
+        private ReflectModes reflectMode = ReflectModes.XAxis;
 
         public SpinnyWebGame()
         {
@@ -56,8 +57,8 @@ namespace SpinnyWeb
             if (WasKeyJustPressed(Keys.G, keyboardState))
                 gridManager.snapping = !gridManager.snapping;
 
-            if (WasKeyJustPressed(Keys.R, keboardState)) {
-                pointManager.FlipCurrentPoint(reflectMode);
+            if (WasKeyJustPressed(Keys.R, keyboardState)) {
+                pointManager.FlipCurrentPoint(reflectMode, ScreenSize() * 0.5f);
             }
 
             float mouseScroll = Mouse.GetState().ScrollWheelValue;

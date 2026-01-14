@@ -66,35 +66,38 @@ namespace SpinnyWeb
                 mousePos.Y >= top && mousePos.Y <= bottom);
         }
 
-        public void FlipCurrentPoint(ReflectModes mode)
+        public void FlipCurrentPoint(ReflectModes mode, Vector2 screenCenter)
         {
-            if (hovering == -1)
-            {
-                return;
-            }
+            if (hovering == -1) return;
+
             GridPoint point = points[hovering];
             Vector2 p = point.position;
-            Vector2 newPosition;
+
+            Vector2 local = p - screenCenter;
+            Vector2 flipped;
 
             if (mode == ReflectModes.XAxis)
             {
-                newPosition = new Vector2(p.X, -p.Y);
+                flipped = new Vector2(local.X, -local.Y);
             }
             else if (mode == ReflectModes.YAxis)
             {
-                newPosition = new Vector2(-p.X, p.Y);
-            } else if (mode == ReflectModes.YeX)
+                flipped = new Vector2(-local.X, local.Y);
+            }
+            else if (mode == ReflectModes.YeX)
             {
-                newPosition = new Vector2(p.Y, p.X);
-            } else if (mode == ReflectModes.YeNX)
+                flipped = new Vector2(local.Y, local.X);
+            }
+            else if (mode == ReflectModes.YeNX)
             {
-                newPosition = new Vector2(-p.Y, -p.X);
-            } else
+                flipped = new Vector2(-local.Y, -local.X);
+            }
+            else
             {
-                newPosition = p;
+                flipped = local;
             }
 
-                point.SetPosition(newPosition);
+            point.SetPosition(flipped + screenCenter);
         }
 
         public void Update(GridManager grid, Vector2 screenSize)
@@ -204,6 +207,10 @@ namespace SpinnyWeb
                 Vector2 pivotPos = grid.SnapToGrid(pivot.position, screenSize * 0.5f);
 
                 Vector2 relativePivot = new Vector2(pointPos.X - pivotPos.X, pointPos.Y - pivotPos.Y);
+                Vector2 relativeCenter = new Vector2(
+                    pointPos.X - screenCenter.X,
+                    pointPos.Y - screenCenter.Y
+                    );
                 Vector2 dir = pointPos - pivotPos;
 
                 float dist = dir.Length();
@@ -223,12 +230,6 @@ namespace SpinnyWeb
                     
                     DrawDirLine(spriteBatch, vertStart, dy >= 0 ? MathF.PI * 0.5f : -MathF.PI * 0.5f, MathF.Abs(dy), 3, Color.Red * .4f);
 
-                    // little right-angle L inside the corner
-                    Vector2 relativeCenter = new Vector2(
-                        pointPos.X - screenCenter.X,
-                        pointPos.Y - screenCenter.Y
-                        );
-
                     DrawDirLine(spriteBatch, vertStart + new Vector2(CORNER_SIZE * -MathF.Sign(relativePivot.X), relativePivot.Y < 0 ? -CORNER_SIZE : 0), MathF.PI * 0.5f, CORNER_SIZE, 2, Color.Blue * .4f);
                     DrawDirLine(spriteBatch, vertStart + new Vector2(relativePivot.X < 0 ? 0 : -CORNER_SIZE, CORNER_SIZE * MathF.Sign(relativePivot.Y)), 0, CORNER_SIZE, 2, Color.Blue * .4f);
                 }
@@ -236,6 +237,7 @@ namespace SpinnyWeb
                 GridPointDrawOptions options = new GridPointDrawOptions(
                     drawText,
                     !isPivot,
+                    relativeCenter,
                     pivotPos,
                     MathHelper.ToDegrees(atan + (MathHelper.Pi * .5f)),
                     relativePivot / new Vector2(25, -25)

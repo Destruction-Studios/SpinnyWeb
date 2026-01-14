@@ -48,7 +48,7 @@ namespace SpinnyWeb
             {
                 spriteBatch.DrawString(
                     font,
-                    string.Format("(x: {0:F2}, y: {1:F2})", circleRenderPos.X / 25, circleRenderPos.Y / -25),
+                    string.Format("(x: {0:F2}, y: {1:F2})", options.RelativeCenterPos.X / 25, options.RelativeCenterPos.Y / -25),
                     options.RenderPos + TEXT_OFFSET,
                     Color.Teal
                     );
