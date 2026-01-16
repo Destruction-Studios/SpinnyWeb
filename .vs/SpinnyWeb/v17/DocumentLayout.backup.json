@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\managers\\pointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\managers\\pointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\spinnywebgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\spinnywebgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\classes\\gridpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\classes\\gridpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\objects\\reflectmodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\objects\\reflectmodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\objects\\gridpointdrawoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\objects\\gridpointdrawoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|c:\\users\\tcasa\\onedrive\\documents\\github\\spinnyweb\\spinnyweb\\managers\\pointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B1D1D01-533A-4EA7-AC1F-FD6FEC4F9297}|SpinnyWeb\\SpinnyWeb.csproj|solutionrelative:spinnyweb\\managers\\pointmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,67 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GridPointDrawOptions.cs",
-              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Objects\\GridPointDrawOptions.cs",
-              "RelativeDocumentMoniker": "SpinnyWeb\\Objects\\GridPointDrawOptions.cs",
-              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Objects\\GridPointDrawOptions.cs",
-              "RelativeToolTip": "SpinnyWeb\\Objects\\GridPointDrawOptions.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T17:47:43.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GridPoint.cs",
-              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Classes\\GridPoint.cs",
-              "RelativeDocumentMoniker": "SpinnyWeb\\Classes\\GridPoint.cs",
-              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Classes\\GridPoint.cs",
-              "RelativeToolTip": "SpinnyWeb\\Classes\\GridPoint.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T17:47:27.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReflectModes.cs",
-              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Objects\\ReflectModes.cs",
-              "RelativeDocumentMoniker": "SpinnyWeb\\Objects\\ReflectModes.cs",
-              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Objects\\ReflectModes.cs",
-              "RelativeToolTip": "SpinnyWeb\\Objects\\ReflectModes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T04:21:16.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PointManager.cs",
-              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\PointManager.cs",
-              "RelativeDocumentMoniker": "SpinnyWeb\\Managers\\PointManager.cs",
-              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\PointManager.cs",
-              "RelativeToolTip": "SpinnyWeb\\Managers\\PointManager.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAArwGMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T04:08:47.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "SpinnyWebGame.cs",
               "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\SpinnyWebGame.cs",
               "RelativeDocumentMoniker": "SpinnyWeb\\SpinnyWebGame.cs",
               "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\SpinnyWebGame.cs",
               "RelativeToolTip": "SpinnyWeb\\SpinnyWebGame.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDwAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwDsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T04:06:26.686Z",
+              "WhenOpened": "2026-01-15T23:53:31.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PointManager.cs",
+              "DocumentMoniker": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\PointManager.cs",
+              "RelativeDocumentMoniker": "SpinnyWeb\\Managers\\PointManager.cs",
+              "ToolTip": "C:\\Users\\tcasa\\OneDrive\\Documents\\GitHub\\SpinnyWeb\\SpinnyWeb\\Managers\\PointManager.cs",
+              "RelativeToolTip": "SpinnyWeb\\Managers\\PointManager.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAkwHQAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T23:38:06.79Z",
               "EditorCaption": ""
             }
           ]

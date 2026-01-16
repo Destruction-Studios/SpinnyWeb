@@ -12,6 +12,7 @@ namespace SpinnyWeb
         private const float POINT_HITBOX_SCALE = .14f;
         private const float CORNER_SIZE = 25f;
 
+        public ReflectModes currentReflectMode = ReflectModes.XAxis;
 
         public float rotAdd;
 
@@ -66,31 +67,39 @@ namespace SpinnyWeb
                 mousePos.Y >= top && mousePos.Y <= bottom);
         }
 
-        public void FlipCurrentPoint(ReflectModes mode, Vector2 screenCenter)
+        public void NextReflectMode()
+        {
+            int next = (int)currentReflectMode + 1;
+
+            if (next >= Enum.GetValues(typeof(ReflectModes)).Length)
+                next = 0;
+
+            currentReflectMode = (ReflectModes)next;
+        }
+
+        public void FlipPoint(GridPoint point, Vector2 screenCenter)
         {
             if (hovering == -1) return;
 
-            GridPoint point = points[hovering];
             Vector2 p = point.position;
-
             Vector2 local = p - screenCenter;
             Vector2 flipped;
 
-            if (mode == ReflectModes.XAxis)
+            if (currentReflectMode == ReflectModes.XAxis)
             {
                 flipped = new Vector2(local.X, -local.Y);
             }
-            else if (mode == ReflectModes.YAxis)
+            else if (currentReflectMode == ReflectModes.YAxis)
             {
                 flipped = new Vector2(-local.X, local.Y);
             }
-            else if (mode == ReflectModes.YeX)
-            {
-                flipped = new Vector2(local.Y, local.X);
-            }
-            else if (mode == ReflectModes.YeNX)
+            else if (currentReflectMode == ReflectModes.YeX)
             {
                 flipped = new Vector2(-local.Y, -local.X);
+            }
+            else if (currentReflectMode == ReflectModes.YeNX)
+            {
+                flipped = new Vector2(local.Y, local.X);
             }
             else
             {
@@ -99,6 +108,15 @@ namespace SpinnyWeb
 
             point.SetPosition(flipped + screenCenter);
         }
+
+        public void SetPointsToSnappedPositions(GridManager gridManager, Vector2 screenSize)
+        {
+            Vector2 screenCenter = screenSize * 0.5f;
+            foreach (KeyValuePair<int, GridPoint> v in points)
+            {
+                v.Value.SetPosition(gridManager.SnapToGrid(v.Value.position, screenCenter));
+            }
+        } 
 
         public void Update(GridManager grid, Vector2 screenSize)
         {
@@ -109,6 +127,10 @@ namespace SpinnyWeb
             bool justPressed =
                 state.LeftButton == ButtonState.Pressed &&
                 lastMouseState.LeftButton == ButtonState.Released;
+
+            bool justRightPressed =
+                state.RightButton == ButtonState.Pressed &&
+                lastMouseState.RightButton == ButtonState.Released;
 
             bool justReleased =
                 state.LeftButton == ButtonState.Released &&
@@ -152,6 +174,10 @@ namespace SpinnyWeb
                     {
                         draggingId = v.Key;
                         break;
+                    }
+                    if (justRightPressed)
+                    {
+                        FlipPoint(v.Value, screenCenter);
                     }
                 }
                 else

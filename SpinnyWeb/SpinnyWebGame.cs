@@ -8,6 +8,8 @@ namespace SpinnyWeb
 {
     public class SpinnyWebGame : Game
     {
+        
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -23,8 +25,7 @@ namespace SpinnyWeb
         KeyboardState lastKeyboardState;
 
         private float lastMouseScroll;
-
-        private ReflectModes reflectMode = ReflectModes.XAxis;
+        private string[] relfectionTranslation = ["X Axis", "Y Axis", "y = x", "y = -x"];
 
         public SpinnyWebGame()
         {
@@ -55,10 +56,14 @@ namespace SpinnyWeb
                 pointManager.AddPoint(new Vector2(mouseState.X, mouseState.Y));//gridManager.RandomPos(ScreenSize()));
 
             if (WasKeyJustPressed(Keys.G, keyboardState))
+            {
+                pointManager.SetPointsToSnappedPositions(gridManager, ScreenSize());
                 gridManager.snapping = !gridManager.snapping;
+            }
+               
 
             if (WasKeyJustPressed(Keys.R, keyboardState)) {
-                pointManager.FlipCurrentPoint(reflectMode, ScreenSize() * 0.5f);
+                pointManager.NextReflectMode();
             }
 
             float mouseScroll = Mouse.GetState().ScrollWheelValue;
@@ -78,12 +83,15 @@ namespace SpinnyWeb
 
             string gridText = string.Format("[G] Grid: {0}", gridManager.snapping ? "Enabled" : "Disabled");
             string pointText = string.Format("[+] Points: {0}", pointManager.points.Count - 1);
+            string reflectText = string.Format("[R] Reflect: {0}", relfectionTranslation[(int)pointManager.currentReflectMode]);
 
             visualDebuggingManager.AddText("[S] to open source page (spin.mrussell.net/source)");
             visualDebuggingManager.AddText(gridText);
+            visualDebuggingManager.AddText(reflectText);
             visualDebuggingManager.AddText(pointText);
             visualDebuggingManager.AddText("");
             visualDebuggingManager.AddText("Drag points to move them");
+            visualDebuggingManager.AddText("Right click a point to reflect over the selected axis");
             visualDebuggingManager.AddText("Scroll to rotate around pivot");
 
             gridManager.Draw(spriteBatch, ScreenSize());
