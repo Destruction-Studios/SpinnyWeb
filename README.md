@@ -40,7 +40,7 @@ Because the unit circle has a radius (hypotenuse) of `1`, the equations simplify
 
 Before rotating a point, we often need to determine its current angle around the pivot.
 
-`atan(y / x)` returns the angle (in radians) of a slope. The problem with `atan` is that it can not figure out which quadrent the point is located in (meaning incorrect values). It also completely fails when `x = 0`
+`atan(y / x)` returns the angle (in radians) of a slope. The problem with atan is that it cannot determine which quadrant the point is located in, resulting in ambiguous angles. It also completely fails when `x = 0`
 
 Because of this, `atan` is unreliable for determining rotation in 2D space.
 
@@ -68,6 +68,7 @@ To get the position of a point on a circle using an angle θ:
 
 ### Coordinates on the Unit Circle
 
+- `atan2(y, x)` gives the current rotation relative to the pivot, which we use as θ.
 - `cos(θ)` gives the **X coordinate** (Remember `cos` uses the adjacent side which is the bottom of the triangle)
 - `sin(θ)` gives the **Y coordinate** (`sin` uses the opposite side or the leg which is the height of the triangle)
 
