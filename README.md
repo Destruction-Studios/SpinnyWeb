@@ -65,7 +65,7 @@ This produces the point: ```(cos(θ), sin(θ))```
 
 Since these values come from the unit circle, they must be scaled and offset to match the actual position.
 
-1. Scale by the desired distance from the pivot: ```(cos(θ), sin(θ)) * distance```
+1. Scale by the desired distance from the pivot: ```(cos(θ), sin(θ)) * distance``` (distance is just the pythagorean theorem as we all know)
 2. Offset by the original position:  ```original_position + (cos(θ), sin(θ)) * distance```
 
 This produces the final rotated point.
