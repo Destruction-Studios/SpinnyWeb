@@ -11,7 +11,7 @@ This is accomplished using basic trigonometric functions such as `sin` and `cos`
 
 ---
 
-## Sine and Cosine
+### Sine and Cosine
 
 Assuming you are familiar with right triangles, this section explains `sin` and `cos`.
 
@@ -36,6 +36,18 @@ Because the unit circle has a radius (hypotenuse) of `1`, the equations simplify
 
 ---
 
+### `atan` / `atan2`
+
+Before rotating a point, we often need to determine its current angle around the pivot.
+
+`atan(y / x)` returns the angle (in radians) of a slope. The problem with `atan` is that it can not figure out which quadrent the point is located in (meaning incorrect values). It also completely fails when `x = 0`
+
+Because of this, `atan` is unreliable for determining rotation in 2D space.
+
+`atan2(y, x)` takes the Y and X coordinates separately and returns the angle (in radians) from the positive X-axis to the point `(x, y)`.
+
+
+Because `atan2` correctly accounts for quadrant and direction, it should always be used instead of `atan` when working with positions or rotations.
 ## Radians
 
 Radians measure angles using arc length rather than arbitrary degree values.
